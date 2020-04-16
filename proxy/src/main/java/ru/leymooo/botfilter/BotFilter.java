@@ -84,7 +84,7 @@ public class BotFilter
         geoIp = new GeoIp( startup );
         serverPingUtils = new ServerPingUtils( this );
 
-        if ( isGeoIpEnabled() )
+        if ( geoIp.isEnabled() )
         {
             executor = Executors.newFixedThreadPool( Runtime.getRuntime().availableProcessors() * 2, new ThreadFactoryBuilder().setNameFormat( "BF-%d" ).build() );
         } else
